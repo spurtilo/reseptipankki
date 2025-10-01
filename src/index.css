@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #8b5e3c;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,6 +28,12 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.header-image {
+  width: 100%; /* fills available width */
+  max-width: 1000px; /* doesn’t exceed your intended max */
+  height: auto; /* keeps aspect ratio */
 }
 
 h1 {
