@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Header from "../components/Header";
 
 function RecipeForm() {
   const [inputData, setInputData] = useState("");
@@ -19,6 +20,7 @@ function RecipeForm() {
 
   return (
     <>
+      <Header />
       <form onSubmit={handleSubmit}>
         <label>
           Input:
