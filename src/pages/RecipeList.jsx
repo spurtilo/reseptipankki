@@ -6,9 +6,11 @@ const RecipeList = () => {
   return (
     <>
       <Header />
-      {recipes.map((recipe, index) => (
-        <RecipeListItem key={index} recipe={recipe} />
-      ))}
+      <div className="recipe-list-container">
+        {recipes.map((recipe, index) => (
+          <RecipeListItem key={index} recipe={recipe} />
+        ))}
+      </div>
     </>
   );
 };

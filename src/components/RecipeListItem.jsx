@@ -1,7 +1,8 @@
 const RecipeListItem = ({ recipe }) => {
   return (
-    <div>
-      <h2>{recipe.name}</h2>
+    <div className="recipe-list-item">
+      <img src={recipe.img} className="recipe-image" />
+      {recipe.name}
     </div>
   );
 };
