@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Header from "../components/Header";
+import RecipeForm from "../components/RecipeForm";
 
-function RecipeForm() {
+function AddRecipe() {
   const [inputData, setInputData] = useState("");
   const [messages, setMessages] = useState([]);
 
@@ -17,21 +18,17 @@ function RecipeForm() {
     const value = e.target.value;
     setInputData(value);
   };
-
   return (
-    <>
+    <div className="page-container">
       <Header />
-      <form onSubmit={handleSubmit}>
-        <label>
-          Input:
-          <input type="text" value={inputData} onChange={handleChange} />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-      {messages.length > 0 &&
-        messages.map((message, index) => <li key={index}>{message}</li>)}
-    </>
+      <RecipeForm
+        inputData={inputData}
+        messages={messages}
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+      />
+    </div>
   );
 }
 
-export default RecipeForm;
+export default AddRecipe;
