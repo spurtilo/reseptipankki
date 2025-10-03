@@ -55,7 +55,8 @@ a:hover {
 
 /* RECIPE LIST */
 .recipe-list-container,
-.recipe-form-container {
+.recipe-form-container,
+.recipe-container {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
