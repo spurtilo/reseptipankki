@@ -6,16 +6,19 @@ import Header from "../components/Header";
 import RecipeListItem from "../components/RecipeListItem";
 
 const RecipeList = () => {
+  const [loading, setLoading] = useState(true);
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     const fetchRecipes = async () => {
+      setLoading(true);
       try {
         const data = await recipeService.getAll();
         setRecipes(data);
       } catch (error) {
-        console.log("ERROR FETCHING RECIPES");
+        console.log("ERROR FETCHING RECIPES: ", error.message);
       }
+      setLoading(false);
     };
     fetchRecipes();
   }, []);
@@ -24,9 +27,11 @@ const RecipeList = () => {
     <div className="page-container">
       <Header />
       <div className="recipe-list-container">
-        {recipes?.map((recipe, index) => (
-          <RecipeListItem key={index} recipe={recipe} />
-        ))}
+        {loading && <div>Loading</div>}
+        {!loading &&
+          recipes.map((recipe, index) => (
+            <RecipeListItem key={index} recipe={recipe} />
+          ))}
       </div>
     </div>
   );
