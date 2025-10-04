@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 import recipeService from "../services/recipes";
 
@@ -9,8 +8,6 @@ import RecipeListItem from "../components/RecipeListItem";
 const RecipeList = () => {
   const [loading, setLoading] = useState(true);
   const [recipes, setRecipes] = useState([]);
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -26,10 +23,6 @@ const RecipeList = () => {
     fetchRecipes();
   }, []);
 
-  const handleClick = () => {
-    navigate(`/recipes/${recipe.id}`);
-  };
-
   return (
     <div className="page-container">
       <Header />
@@ -37,7 +30,7 @@ const RecipeList = () => {
         {loading && <div>Loading</div>}
         {!loading &&
           recipes.map((recipe, index) => (
-            <RecipeListItem key={index} recipe={recipe} onClick={handleClick} />
+            <RecipeListItem key={index} recipe={recipe} />
           ))}
       </div>
     </div>

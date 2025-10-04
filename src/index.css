@@ -55,8 +55,7 @@ a:hover {
 
 /* RECIPE LIST */
 .recipe-list-container,
-.recipe-form-container,
-.recipe-container {
+.recipe-form-container {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -87,15 +86,75 @@ a:hover {
   max-width: 12rem;
   transition: transform 0.1s ease-in-out;
   will-change: transform;
+  cursor: pointer;
 }
 .recipe-image {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 .recipe-list-item:hover {
   transform: scale(1.05);
+}
+
+/* RECIPE DETAILS */
+.recipe-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 2rem 12rem 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 0 0 0.75rem 0.75rem;
+  background-color: #f5e9df;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.recipe-navbar {
+  display: flex;
+  width: 100%;
+  min-height: 2.75rem;
+  align-items: center;
+  margin: 0.75rem 0 0 0;
+  border-radius: 0.75rem 0.75rem 0 0;
+  box-sizing: border-box;
+  background-color: #d6c1ad;
+  font-family: "Fredoka", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 8px;
+}
+.recipe-navbar-button1 {
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  border-right: 1px solid grey;
+  border-radius: 0.75rem 0 0 0;
+  box-sizing: border-box;
+  opacity: 1;
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+}
+.recipe-navbar-button1:hover {
+  border-radius: 0.75rem 0 0 0;
+  background-color: #a78b70;
+}
+.recipe-navbar-button2 {
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  border-radius: 0 0.75rem 0 0;
+  box-sizing: border-box;
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+}
+.recipe-navbar-button2:hover {
+  border-radius: 0 0.75rem 0 0;
+  background-color: #a78b70;
 }
 
 /* RECIPE FORM */
