@@ -11,7 +11,7 @@ const RecipeList = () => {
     error,
   } = useQuery({
     queryKey: ["recipes"],
-    queryFn: () => recipeService.getAll(),
+    queryFn: recipeService.getAll,
   });
 
   return (
