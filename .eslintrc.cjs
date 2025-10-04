@@ -1,8 +1,9 @@
 module.exports = {
   extends: [
     "airbnb",
-    "plugin:react-hooks/recommended", // add React Hooks rules
+    "plugin:react-hooks/recommended",
     "prettier",
+    "plugin:@tanstack/query/recommended",
   ],
   overrides: [
     {
@@ -13,7 +14,7 @@ module.exports = {
       },
     },
   ],
-  plugins: ["react-refresh"], // React Fast Refresh plugin
+  plugins: ["react-refresh"],
   env: {
     browser: true,
     es2021: true,

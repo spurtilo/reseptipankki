@@ -1,37 +1,31 @@
-import { useEffect, useState } from "react";
-
+import { useQuery } from "@tanstack/react-query";
 import recipeService from "../services/recipes";
 
 import Header from "../components/Header";
 import RecipeListItem from "../components/RecipeListItem";
 
 const RecipeList = () => {
-  const [loading, setLoading] = useState(true);
-  const [recipes, setRecipes] = useState([]);
-
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      setLoading(true);
-      try {
-        const data = await recipeService.getAll();
-        setRecipes(data);
-      } catch (error) {
-        console.log("ERROR FETCHING RECIPES: ", error.message);
-      }
-      setLoading(false);
-    };
-    fetchRecipes();
-  }, []);
+  const {
+    data: recipes = [],
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["recipes"],
+    queryFn: () => recipeService.getAll(),
+  });
 
   return (
     <div className="page-container">
       <Header />
       <div className="recipe-list-container">
-        {loading && <div>Loading</div>}
-        {!loading &&
-          recipes.map((recipe, index) => (
-            <RecipeListItem key={index} recipe={recipe} />
-          ))}
+        {isLoading && <p>Reseptejä ladataan...</p>}
+        {error && <p>Virhe reseptejä ladatessa: {error.message}</p>}
+        {!isLoading && !error && recipes.length === 0 && (
+          <p>Ei löytynyt yhtään reseptejä.</p>
+        )}
+        {recipes.map((recipe, index) => (
+          <RecipeListItem key={index} recipe={recipe} />
+        ))}
       </div>
     </div>
   );
