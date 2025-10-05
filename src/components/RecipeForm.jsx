@@ -1,9 +1,9 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-const RecipeForm = ({ inputData, handleSubmit, handleChange }) => {
+const RecipeForm = ({ register, handleSubmit, errors, onSubmit }) => {
   return (
     <div className="recipe-form-container">
-      <form className="recipe-form" onSubmit={handleSubmit}>
+      <form className="recipe-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-row">
           <label className="form-label" htmlFor="name">
             Nimi:
@@ -13,9 +13,9 @@ const RecipeForm = ({ inputData, handleSubmit, handleChange }) => {
             name="name"
             type="text"
             className="form-field"
-            value={inputData}
-            onChange={handleChange}
+            {...register("name", { required: true })}
           />
+          {errors.name && <div>This field is required</div>}
         </div>
         <div className="form-row">
           <label className="form-label" htmlFor="ingredients">
@@ -25,8 +25,7 @@ const RecipeForm = ({ inputData, handleSubmit, handleChange }) => {
             type="text"
             name="ingredients"
             className="form-field"
-            value={inputData}
-            onChange={handleChange}
+            {...register("ingredients")}
           />
         </div>
         <div className="form-row">
@@ -37,8 +36,7 @@ const RecipeForm = ({ inputData, handleSubmit, handleChange }) => {
             type="text"
             name="instructions"
             className="form-field"
-            value={inputData}
-            onChange={handleChange}
+            {...register("instructions")}
           />
         </div>
         <div className="form-row">
@@ -49,8 +47,7 @@ const RecipeForm = ({ inputData, handleSubmit, handleChange }) => {
             type="text"
             name="url"
             className="form-field"
-            value={inputData}
-            onChange={handleChange}
+            {...register("url")}
           />
         </div>
         <button className="form-button" type="submit">
