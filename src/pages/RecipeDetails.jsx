@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import recipeService from "../services/recipes";
 import { useParams } from "react-router-dom";
+import recipeService from "../services/recipes";
 
 import Header from "../components/Header";
 import RecipeNavbar from "../components/RecipeNavbar";
