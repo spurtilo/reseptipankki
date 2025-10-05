@@ -7,8 +7,9 @@ import RecipeListItem from "../components/RecipeListItem";
 const RecipeList = () => {
   const {
     data: recipes = [],
-    isLoading,
+    isPending,
     error,
+    isSuccess,
   } = useQuery({
     queryKey: ["recipes"],
     queryFn: recipeService.getAll,
@@ -18,9 +19,9 @@ const RecipeList = () => {
     <div className="page-container">
       <Header />
       <div className="recipe-list-container">
-        {isLoading && <p>Reseptejä ladataan...</p>}
+        {isPending && <p>Reseptejä ladataan...</p>}
         {error && <p>Virhe reseptejä ladatessa: {error.message}</p>}
-        {!isLoading && !error && recipes.length === 0 && (
+        {isSuccess && recipes.length === 0 && (
           <p>Ei löytynyt yhtään reseptejä.</p>
         )}
         {recipes.map((recipe, index) => (
