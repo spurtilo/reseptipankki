@@ -7,11 +7,17 @@ function AddRecipe() {
   const {
     register,
     handleSubmit,
-    setValue,
-    getValues,
     control,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      name: "",
+      ingredients: "",
+      instructions: "",
+      additionalInfo: "",
+      url: "",
+    },
+  });
 
   const onSubmit = (data) => console.log(data);
 
@@ -24,10 +30,8 @@ function AddRecipe() {
           handleSubmit,
           errors,
           onSubmit,
-          setValue,
-          getValues,
-          Controller,
           control,
+          Controller,
         }}
       />
     </div>
