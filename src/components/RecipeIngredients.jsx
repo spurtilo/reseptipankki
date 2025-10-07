@@ -1,10 +1,12 @@
-const RecipeIngredients = ({ name, ingredients }) => {
+const RecipeIngredients = ({ ingredients }) => {
   return (
     <div>
-      <h2>{name}</h2>
-      {ingredients.map((ingredient, i) => (
-        <p key={i}>{ingredient}</p>
-      ))}
+      <h2>Ainekset</h2>
+      <ul>
+        {ingredients.map((ingredient, i) => (
+          <li key={i}>{ingredient}</li>
+        ))}
+      </ul>
     </div>
   );
 };

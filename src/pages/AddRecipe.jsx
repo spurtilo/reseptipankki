@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 
 import Header from "../components/Header";
 import RecipeForm from "../components/RecipeForm";
@@ -7,6 +7,9 @@ function AddRecipe() {
   const {
     register,
     handleSubmit,
+    setValue,
+    getValues,
+    control,
     formState: { errors },
   } = useForm();
 
@@ -15,7 +18,18 @@ function AddRecipe() {
   return (
     <div className="page-container">
       <Header />
-      <RecipeForm {...{ register, handleSubmit, errors, onSubmit }} />
+      <RecipeForm
+        {...{
+          register,
+          handleSubmit,
+          errors,
+          onSubmit,
+          setValue,
+          getValues,
+          Controller,
+          control,
+        }}
+      />
     </div>
   );
 }

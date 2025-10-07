@@ -26,20 +26,26 @@ const RecipeDetails = () => {
     <div className="page-container">
       <Header />
       <div className="recipe-container">
-        <RecipeNavbar setActiveSection={setActiveSection} />
         {isPending && <p>Reseptejä ladataan...</p>}
         {error && <p>Virhe reseptejä ladatessa: {error.message}</p>}
-        {isSuccess && activeSection === "ingredients" && (
-          <RecipeIngredients
-            name={recipe.name}
-            ingredients={recipe.ingredients}
-          />
-        )}
-        {isSuccess && activeSection === "instructions" && (
-          <RecipeInstructions
-            name={recipe.name}
-            instructions={recipe.instructions}
-          />
+        {isSuccess && (
+          <>
+            <h1 className="recipe-name">{recipe.name}</h1>
+            <RecipeNavbar setActiveSection={setActiveSection} />
+
+            {activeSection === "ingredients" && (
+              <RecipeIngredients
+                name={recipe.name}
+                ingredients={recipe.ingredients}
+              />
+            )}
+            {activeSection === "instructions" && (
+              <RecipeInstructions
+                name={recipe.name}
+                instructions={recipe.instructions}
+              />
+            )}
+          </>
         )}
       </div>
     </div>

@@ -49,12 +49,30 @@ h6 {
   padding: 0;
 }
 
-h1 {
+h1,
+.form-header,
+.recipe-name {
   font-family: "Fredoka", sans-serif;
   font-weight: 400;
   font-size: 2rem;
   letter-spacing: 0.01em;
+  margin-bottom: 2rem;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.form-header {
   margin-left: 5.75rem;
+}
+.recipe-name {
+  margin-top: 2rem;
+}
+h2 {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   word-break: break-word;
   -webkit-font-smoothing: antialiased;
@@ -103,14 +121,13 @@ h1 {
   text-align: center;
   gap: 0.2rem;
   padding: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: black;
   border-radius: 0.5rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   flex: 0 1 9.375rem;
-  max-width: 12rem;
   transition: transform 0.1s ease-in-out;
   will-change: transform;
   cursor: pointer;
@@ -145,7 +162,6 @@ h1 {
   width: 100%;
   min-height: 2.75rem;
   align-items: center;
-  margin: 2rem 0 0 0;
   border-radius: 0.75rem 0.75rem 0 0;
   background-color: #d6c1ad;
   font-family: "Fredoka", sans-serif;
@@ -225,12 +241,16 @@ h1 {
   flex-direction: column;
   width: 100%;
 }
-.form-field {
+.form-field,
+.text-area {
   width: 100%;
   min-height: 2rem;
   border-radius: 0.3rem;
   margin: 0;
   padding: 0;
+}
+.text-area {
+  padding: 0.3rem;
 }
 .error {
   color: red;
