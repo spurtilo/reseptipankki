@@ -56,7 +56,7 @@ h1,
   font-weight: 400;
   font-size: 2rem;
   letter-spacing: 0.01em;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   word-break: break-word;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -157,6 +157,22 @@ h2 {
   background-color: #f5e9df;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.recipe-header {
+  display: flex;
+  flex-direction: column;
+}
+.recipe-header-text {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+.recipe-details-image {
+  width: 100%;
+  aspect-ratio: 4 / 1;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  padding-top: 2rem;
+}
 .recipe-navbar {
   display: flex;
   width: 100%;
@@ -202,12 +218,27 @@ h2 {
   color: #000000;
 }
 
-.markdown {
+/* RECIPE DETAILS MARKDOWN */
+
+.markdown-ingredients,
+.markdown-instructions {
   width: 100%;
 }
-.markdown li {
+.markdown-ingredients ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+.markdown-ingredients li {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: 0.5rem;
   border-bottom: 1px solid rgb(180, 180, 180);
-  padding: 3px 0;
+  padding: 0.8rem 0;
+}
+.markdown-instructions ol {
+  padding-left: 0;
+  margin-left: 2ch;
 }
 
 /* ADD RECIPE */

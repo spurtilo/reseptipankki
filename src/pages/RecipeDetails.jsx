@@ -30,20 +30,18 @@ const RecipeDetails = () => {
         {error && <p>Virhe reseptejä ladatessa: {error.message}</p>}
         {isSuccess && (
           <>
-            <h1 className="recipe-name">{recipe.name}</h1>
+            <div className="recipe-header">
+              <img src={recipe.img} className="recipe-details-image" />
+              <h1 className="recipe-name">{recipe.name}</h1>
+              <p className="recipe-header-text">{recipe.headerText}</p>
+            </div>
             <RecipeNavbar setActiveSection={setActiveSection} />
 
             {activeSection === "ingredients" && (
-              <RecipeIngredients
-                name={recipe.name}
-                ingredients={recipe.ingredients}
-              />
+              <RecipeIngredients ingredients={recipe.ingredients} />
             )}
             {activeSection === "instructions" && (
-              <RecipeInstructions
-                name={recipe.name}
-                instructions={recipe.instructions}
-              />
+              <RecipeInstructions instructions={recipe.instructions} />
             )}
           </>
         )}
