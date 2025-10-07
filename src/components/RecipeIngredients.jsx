@@ -1,12 +1,10 @@
+import Markdown from "react-markdown";
+
 const RecipeIngredients = ({ ingredients }) => {
   return (
-    <div>
+    <div className="markdown">
       <h2>Ainekset</h2>
-      <ul>
-        {ingredients.map((ingredient, i) => (
-          <li key={i}>{ingredient}</li>
-        ))}
-      </ul>
+      <Markdown>{ingredients}</Markdown>
     </div>
   );
 };

@@ -1,10 +1,10 @@
-const RecipeInstructions = ({ name, instructions }) => {
+import Markdown from "react-markdown";
+
+const RecipeInstructions = ({ instructions }) => {
   return (
-    <div>
+    <div className="markdown">
       <h2>Valmistus</h2>
-      {instructions.map((inst, i) => (
-        <p key={i}>{inst}</p>
-      ))}
+      <Markdown>{instructions}</Markdown>
     </div>
   );
 };
