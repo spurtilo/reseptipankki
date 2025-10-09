@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import recipeService from "../services/recipes";
 
-import Header from "../components/Header";
+import AppHeader from "../components/AppHeader";
 import RecipeListItem from "../components/RecipeListItem";
 
 const RecipeList = () => {
@@ -17,7 +17,7 @@ const RecipeList = () => {
 
   return (
     <div className="page-container">
-      <Header />
+      <AppHeader />
       <div className="recipe-list-container">
         {isPending && <p>Reseptejä ladataan...</p>}
         {error && <p>Virhe reseptejä ladatessa: {error.message}</p>}

@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import recipeService from "../services/recipes";
 
-import Header from "../components/Header";
+import AppHeader from "../components/AppHeader";
 import RecipeHeader from "../components/RecipeHeader";
 import RecipeNavbar from "../components/RecipeNavbar";
 import RecipeIngredients from "../components/RecipeIngredients";
@@ -25,7 +25,7 @@ const RecipeDetails = () => {
 
   return (
     <div className="page-container">
-      <Header />
+      <AppHeader />
       <div className="recipe-container">
         {isPending && <p>Reseptejä ladataan...</p>}
         {error && <p>Virhe reseptejä ladatessa: {error.message}</p>}

@@ -2,7 +2,7 @@ import { useForm, Controller } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import recipeService from "../services/recipes";
 
-import Header from "../components/Header";
+import AppHeader from "../components/AppHeader";
 import RecipeForm from "../components/RecipeForm";
 
 function AddRecipe() {
@@ -36,7 +36,7 @@ function AddRecipe() {
 
   return (
     <div className="page-container">
-      <Header />
+      <AppHeader />
       <RecipeForm
         {...{
           register,
