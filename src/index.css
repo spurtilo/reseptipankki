@@ -65,7 +65,7 @@ h1,
   margin-left: 5.75rem;
 }
 .recipe-name {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 h2 {
   font-family: "Fredoka", sans-serif;
@@ -161,18 +161,21 @@ h2 {
   display: flex;
   flex-direction: column;
 }
-.recipe-header-text {
-  padding: 0;
-  margin: 0;
-  margin-bottom: 1rem;
-}
-.recipe-details-image {
+.recipe-header-image {
   width: 100%;
   aspect-ratio: 4 / 1;
   object-fit: cover;
   border-radius: 0.5rem;
-  padding-top: 2rem;
+  margin-top: 1rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
+.recipe-header-text {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+
 .recipe-navbar {
   display: flex;
   width: 100%;
@@ -235,6 +238,12 @@ h2 {
   gap: 0.5rem;
   border-bottom: 1px solid rgb(180, 180, 180);
   padding: 0.8rem 0;
+}
+.markdown-ingredients li strong {
+  white-space: nowrap;
+}
+.markdown-ingredients li:not(:has(strong)) {
+  grid-template-columns: 1fr;
 }
 .markdown-instructions ol {
   padding-left: 0;

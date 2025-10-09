@@ -33,7 +33,7 @@ const RecipeDetails = () => {
             <div className="recipe-header">
               <img
                 src={recipe.img || "/images/recipe_placeholder.jpg"}
-                className="recipe-details-image"
+                className="recipe-header-image"
               />
               <h1 className="recipe-name">{recipe.name}</h1>
               {recipe.headerText && (
