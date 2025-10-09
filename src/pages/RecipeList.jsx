@@ -24,8 +24,8 @@ const RecipeList = () => {
         {isSuccess && recipes.length === 0 && (
           <p>Ei löytynyt yhtään reseptejä.</p>
         )}
-        {recipes.map((recipe, index) => (
-          <RecipeListItem key={index} recipe={recipe} />
+        {recipes.map((recipe) => (
+          <RecipeListItem key={recipe.id} recipe={recipe} />
         ))}
       </div>
     </div>
