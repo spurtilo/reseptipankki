@@ -22,9 +22,9 @@ const RecipeForm = ({
           </label>
           <div className="form-field-container">
             <input
+              type="text"
               id="name"
               name="name"
-              type="text"
               className="form-field"
               {...register("name", { required: true })}
             />
@@ -33,7 +33,24 @@ const RecipeForm = ({
             </div>
           </div>
         </div>
-
+        <div className="form-row">
+          <label className="form-label" htmlFor="shortDescription">
+            Lyhyt kuvaus:
+          </label>
+          <div className="form-field-container">
+            <textarea
+              type="text"
+              id="shortDescription"
+              name="shortDescription"
+              className="text-area"
+              rows={4}
+              {...register("shortDescription", { required: true })}
+            />
+            <div className="error">
+              {errors.shortDescription && <>Tämä kenttä on pakollinen</>}
+            </div>
+          </div>
+        </div>
         <div className="form-row">
           <label className="form-label" htmlFor="ingredients">
             Ainekset:
@@ -86,12 +103,13 @@ const RecipeForm = ({
           </div>
         </div>
         <div className="form-row">
-          <label className="form-label" htmlFor="url">
+          <label className="form-label" htmlFor="additionalInfo">
             Lisätietoja:
           </label>
           <div className="form-field-container">
             <textarea
               type="text"
+              id="additionalInfo"
               name="additionalInfo"
               className="text-area"
               rows={4}
