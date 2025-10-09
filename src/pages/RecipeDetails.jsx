@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import recipeService from "../services/recipes";
 
 import Header from "../components/Header";
+import RecipeHeader from "../components/RecipeHeader";
 import RecipeNavbar from "../components/RecipeNavbar";
 import RecipeIngredients from "../components/RecipeIngredients";
 import RecipeInstructions from "../components/RecipeInstructions";
@@ -30,18 +31,8 @@ const RecipeDetails = () => {
         {error && <p>Virhe reseptejä ladatessa: {error.message}</p>}
         {isSuccess && (
           <>
-            <div className="recipe-header">
-              <img
-                src={recipe.img || "/images/recipe_placeholder.jpg"}
-                className="recipe-header-image"
-              />
-              <h1 className="recipe-name">{recipe.name}</h1>
-              {recipe.headerText && (
-                <p className="recipe-header-text">{recipe.headerText}</p>
-              )}
-            </div>
+            <RecipeHeader {...{ recipe }} />
             <RecipeNavbar setActiveSection={setActiveSection} />
-
             {activeSection === "ingredients" && (
               <RecipeIngredients ingredients={recipe.ingredients} />
             )}

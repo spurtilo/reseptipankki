@@ -15,6 +15,7 @@ function AddRecipe() {
   } = useForm({
     defaultValues: {
       name: "",
+      shortDescription: "",
       ingredients: "",
       instructions: "",
       additionalInfo: "",

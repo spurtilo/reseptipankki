@@ -44,7 +44,7 @@ const RecipeForm = ({
               name="shortDescription"
               className="text-area"
               rows={4}
-              {...register("shortDescription", { required: true })}
+              {...register("shortDescription")}
             />
             <div className="error">
               {errors.shortDescription && <>Tämä kenttä on pakollinen</>}
