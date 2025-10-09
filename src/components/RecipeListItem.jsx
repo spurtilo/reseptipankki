@@ -9,7 +9,10 @@ const RecipeListItem = ({ recipe }) => {
 
   return (
     <div className="recipe-list-item" onClick={handleClick}>
-      <img src={recipe.img} className="recipe-image" />
+      <img
+        src={recipe.img || "/images/recipe_placeholder.jpg"}
+        className="recipe-image"
+      />
       {recipe.name}
     </div>
   );

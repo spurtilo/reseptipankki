@@ -31,9 +31,14 @@ const RecipeDetails = () => {
         {isSuccess && (
           <>
             <div className="recipe-header">
-              <img src={recipe.img} className="recipe-details-image" />
+              <img
+                src={recipe.img || "/images/recipe_placeholder.jpg"}
+                className="recipe-details-image"
+              />
               <h1 className="recipe-name">{recipe.name}</h1>
-              <p className="recipe-header-text">{recipe.headerText}</p>
+              {recipe.headerText && (
+                <p className="recipe-header-text">{recipe.headerText}</p>
+              )}
             </div>
             <RecipeNavbar setActiveSection={setActiveSection} />
 
